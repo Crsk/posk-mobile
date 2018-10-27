@@ -1,6 +1,4 @@
 import { PedidoPageModule } from './pages/pedido/pedido.module';
-import { SectorMesaService } from './services/sector-mesa.service';
-import { SyncService } from './services/sync.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -20,8 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    SyncService,
-    SectorMesaService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mesa } from '../interfaces/mesa';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'

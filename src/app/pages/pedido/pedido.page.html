@@ -3,9 +3,12 @@
     <button ion-button icon-only menuToggle (click)="goBack()" padding>
       <ion-icon name="arrow-back"></ion-icon>
     </button>
+    <ion-title>Pedido Mesa {{mesa.codigo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  Código Mesa: {{mesa.codigo}}
+  <ion-list *ngFor="let producto of productos">
+    <p>{{producto.nombre}}</p>
+  </ion-list> 
 </ion-content>

@@ -1,6 +1,8 @@
 import { NavParams, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Mesa } from '../../interfaces/mesa';
+import { Producto } from '../../interfaces/producto';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-pedido',
@@ -9,11 +11,13 @@ import { Mesa } from '../../interfaces/mesa';
 })
 export class PedidoPage implements OnInit {
   mesa: Mesa = null;
+  productos: Producto[] = [];
 
-  constructor(private navParams: NavParams, private modalController: ModalController) { }
+  constructor(private navParams: NavParams, private modalController: ModalController, private productoService: ProductoService) { }
 
   ngOnInit() {
     this.mesa = this.navParams.get('mesa');
+    this.productoService.getProductos().subscribe(productos => this.productos = productos);
   }
 
   goBack() {
