@@ -12,12 +12,16 @@ import { ProductoService } from '../../services/producto.service';
 export class PedidoPage implements OnInit {
   mesa: Mesa = null;
   productos: Producto[] = [];
+  rows: any;
 
   constructor(private navParams: NavParams, private modalController: ModalController, private productoService: ProductoService) { }
 
   ngOnInit() {
     this.mesa = this.navParams.get('mesa');
-    this.productoService.getProductos().subscribe(productos => this.productos = productos);
+    this.productoService.getProductos().subscribe(productos => {
+      this.productos = productos;
+      this.rows = Array.from(Array(Math.ceil(productos.length / 2)).keys());
+    });
   }
 
   goBack() {

@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Mesa } from '../../interfaces/mesa';
-import { Router } from '@angular/router';
-import { NavController, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { PedidoPage } from '../../pages/pedido/pedido.page';
 
 @Component({

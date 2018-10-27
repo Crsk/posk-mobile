@@ -1,0 +1,22 @@
+#producto {
+    height: 100px;
+    width: 100%;
+
+    ion-badge {
+        z-index: 2;
+        position: absolute;
+        margin-left: -40px;
+        margin-top: 16px;
+    }
+    div {
+        z-index: 3;
+        position: relative;
+        text-align: center;
+        font-size: 0.6em;
+        padding: 4px;
+        width: 100%;
+        background-color: rgba(3,153,133,.9);
+        color: white;
+        margin-top: -24px;
+    }
+}

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <button ion-button icon-only menuToggle (click)="goBack()" padding>
       <ion-icon name="arrow-back"></ion-icon>
@@ -7,8 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list *ngFor="let producto of productos">
-    <p>{{producto.nombre}}</p>
-  </ion-list> 
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let i of rows">
+      <ion-col col-6 *ngFor="let producto of productos | slice: (i * 2) : (i + 1) * 2">
+        <app-producto [producto]="producto"></app-producto>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

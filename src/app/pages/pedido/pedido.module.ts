@@ -1,3 +1,4 @@
+import { ProductoComponent } from './../../components/producto/producto.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PedidoPage]
+  declarations: [PedidoPage, ProductoComponent]
 })
 export class PedidoPageModule {}
