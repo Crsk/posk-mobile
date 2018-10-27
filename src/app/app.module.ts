@@ -1,3 +1,4 @@
+import { SectorMesaService } from './services/sector-mesa.service';
 import { SyncService } from './services/sync.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     SyncService,
+    SectorMesaService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

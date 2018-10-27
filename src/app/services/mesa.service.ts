@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mesa } from '../interfaces/mesa';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,9 @@ export class MesaService {
 
   getMesas() {
     return this.http.get<Mesa[]>(this.accessUrl, { headers: this.headers });
+  }
+
+  getMesasPorSector(sectorId: number) {
+    return this.http.get<Mesa[]>(this.accessUrl + sectorId, { headers: this.headers });
   }
 }

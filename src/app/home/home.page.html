@@ -1,11 +1,19 @@
-<ion-header no-border>
-  <ion-toolbar color="light">
-    <ion-title>Posk</ion-title>
+<!-- Segment in a header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="icons" color="dark" padding>
+      <ion-segment-button value="todos" (click)="getMesas()">
+        Todos
+      </ion-segment-button>
+      <ion-segment-button *ngFor="let sector of sectores" value="{{sector.nombre}}" (click)="getMesasPorSector(sector.id)">
+        {{sector.nombre}}
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="center">
-  <ion-grid no-padding>
+  <ion-grid>
     <ion-row *ngFor="let i of rows">
       <ion-col col-4 *ngFor="let mesa of mesas | slice: (i * 3) : (i + 1) * 3">
         <app-mesa [mesa]="mesa"></app-mesa>

@@ -9,10 +9,17 @@ import { Mesa } from '../../interfaces/mesa';
 
 export class MesaComponent implements OnInit {
   @Input() mesa: Mesa;
+  private color: string = '#039985';
 
   constructor() { }
 
   ngOnInit() {
+    if (this.mesa.libre == false) {
+      this.color = '#bc1803';
+    }
+    else {
+      this.color = '#039985';
+    }
   }
 
 }
