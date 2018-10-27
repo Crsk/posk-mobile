@@ -1,3 +1,4 @@
+import { MesaComponent } from './../components/mesa/mesa.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,6 @@ import { HomePage } from './home.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: HomePage }])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, MesaComponent]
 })
 export class HomePageModule {}

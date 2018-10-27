@@ -1,5 +1,15 @@
-<ion-content padding>
-  <ion-list *ngFor="let sync of syncs">
-    {{sync.nombre}}
-  </ion-list>
+<ion-header no-border>
+  <ion-toolbar color="light">
+    <ion-title>Posk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <ion-grid no-padding>
+    <ion-row *ngFor="let i of rows">
+      <ion-col col-4 *ngFor="let mesa of mesas | slice: (i * 3) : (i + 1) * 3">
+        <app-mesa [mesa]="mesa"></app-mesa>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

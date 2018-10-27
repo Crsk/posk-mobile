@@ -1,6 +1,6 @@
+import { MesaService } from './../services/mesa.service';
 import { Component, OnInit } from '@angular/core';
-import { SyncService } from '../services/sync.service';
-import { Sync } from '../interfaces/sync';
+import { Mesa } from '../interfaces/mesa';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,14 @@ import { Sync } from '../interfaces/sync';
   styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
-  private syncs: Sync[] = [];
-
-  constructor(private syncService: SyncService) {}
+  private mesas: Mesa[] = [];
+  private rows: any;
+  constructor(private mesaService: MesaService) { }
 
   ngOnInit() {
-    this.syncService.getSyncs().subscribe(syncs => this.syncs = syncs);
+    this.mesaService.getMesas().subscribe(mesas => {
+      this.mesas = mesas
+      this.rows = Array.from(Array(Math.ceil(mesas.length / 3)).keys());
+    });
   }
 }
