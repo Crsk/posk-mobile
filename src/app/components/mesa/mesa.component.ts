@@ -1,5 +1,7 @@
+import { TabsPage } from './../../tabs/tabs.page';
 import { Component, OnInit, Input } from '@angular/core';
 import { Mesa } from '../../interfaces/mesa';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mesa',
@@ -11,7 +13,7 @@ export class MesaComponent implements OnInit {
   @Input() mesa: Mesa;
   private color: string = '#039985';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     if (this.mesa.libre == false) {
@@ -22,4 +24,7 @@ export class MesaComponent implements OnInit {
     }
   }
 
+  escogerMesa(mesa: Mesa) {
+    this.router.navigateByUrl('/tabs/(about:about)');
+  }
 }

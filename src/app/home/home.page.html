@@ -3,7 +3,7 @@
   <ion-toolbar>
     <ion-segment [(ngModel)]="icons" color="dark" padding>
       <ion-segment-button value="todos" (click)="getMesas()">
-        Todos
+        TODOS
       </ion-segment-button>
       <ion-segment-button *ngFor="let sector of sectores" value="{{sector.nombre}}" (click)="getMesasPorSector(sector.id)">
         {{sector.nombre}}
