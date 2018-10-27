@@ -1,3 +1,4 @@
+import { PedidoPageModule } from './pages/pedido/pedido.module';
 import { SectorMesaService } from './services/sector-mesa.service';
 import { SyncService } from './services/sync.service';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, PedidoPageModule],
   providers: [
     StatusBar,
     SplashScreen,

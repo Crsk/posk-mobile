@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   private sectores: SectorMesa[] = [];
   private rows: any;
   private icons: string;
+  private mesa: Mesa;
 
   constructor(private mesaService: MesaService, private sectorMesaService: SectorMesaService) {
     this.icons = "todos";

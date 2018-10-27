@@ -1,7 +1,8 @@
-import { TabsPage } from './../../tabs/tabs.page';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Mesa } from '../../interfaces/mesa';
 import { Router } from '@angular/router';
+import { NavController, ModalController } from '@ionic/angular';
+import { PedidoPage } from '../../pages/pedido/pedido.page';
 
 @Component({
   selector: 'app-mesa',
@@ -13,7 +14,7 @@ export class MesaComponent implements OnInit {
   @Input() mesa: Mesa;
   private color: string = '#039985';
 
-  constructor(private router: Router) { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
     if (this.mesa.libre == false) {
@@ -25,6 +26,15 @@ export class MesaComponent implements OnInit {
   }
 
   escogerMesa(mesa: Mesa) {
-    this.router.navigateByUrl('/tabs/(about:about)');
+    this.openModal(mesa);
+  }
+  async openModal(mesa: Mesa) {
+    const modal = await this.modalController.create({
+      component: PedidoPage,
+      componentProps: {
+        mesa: mesa
+      }
+    });
+    await modal.present();
   }
 }
